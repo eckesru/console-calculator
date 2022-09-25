@@ -10,14 +10,15 @@ namespace Console_Calculator
 
             //Einlesen und Konvertieren des ersten Werts
             Console.Write("Bitte gib den ersten Summanden ein: ");
-            int summand1 = Convert.ToInt32(Console.ReadLine());
+            decimal summand1 = Convert.ToDecimal(Console.ReadLine());
             
             //Einlesen und Konvertieren des zweiten Werts
             Console.Write("Bitte gib den zweiten Summanden ein: ");
-            int summand2 = Convert.ToInt32(Console.ReadLine());
+            decimal summand2 = Convert.ToDecimal(Console.ReadLine());
 
             //Ausgeben der Summe beider Werte
-            Console.WriteLine("Die Summe ist: {0}", (summand1 + summand2));
+            decimal summe = summand1 + summand2;
+            Console.WriteLine("Die Summe ist: {0}", summe);
             Console.ReadLine();
            }
     }
