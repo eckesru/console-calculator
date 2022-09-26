@@ -1,3 +1,5 @@
+User Stories Console_Calculator
+
 User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
 
 Titel: Addieren
