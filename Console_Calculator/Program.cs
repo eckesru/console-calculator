@@ -25,15 +25,27 @@ namespace Console_Calculator
 
             // Ergebnis entsprechend dem Rechenoperator berechnen
             decimal ergebnis = 0;
-            if (rechenoperator == "+") {
-                ergebnis = Addieren(wert1, wert2);
-                ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
-            } else if (rechenoperator == "-") {
-                ergebnis = Subtrahieren(wert1, wert2);
-                ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
-            } else
+            switch(rechenoperator)
             {
-                Console.WriteLine("Ungültige Eingabe des Rechenoperators.");
+                case "+":
+                    ergebnis = Addieren(wert1, wert2);
+                    ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
+                    break;
+
+                case "-":
+                    ergebnis = Subtrahieren(wert1, wert2);
+                    ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
+                    break;
+
+                case "*":
+                case "/":
+                case "%":
+                    Console.WriteLine("Dieser Rechenoperator wird derzeit noch nicht unterstützt.");
+                    break;
+
+                default:
+                    Console.WriteLine("Ungültige Eingabe des Rechenoperators.");
+                    break;
             }
 
             // Ende des Programms
