@@ -19,7 +19,19 @@ namespace Console_Calculator
             //Ausgeben der Summe beider Werte
             decimal summe = summand1 + summand2;
             Console.WriteLine("Die Summe ist: {0}", summe);
-            Console.ReadLine();
+            WarteAufBenutzerEingabe();
            }
+
+        static void WarteAufBenutzerEingabe()
+        {
+            Console.Write("Zum Beenden die Taste Enter drücken...");
+            Console.ReadLine();
+        }
+
+        static decimal Addieren(decimal summand1, decimal summand2)
+        {
+            decimal summe = summand1 + summand2;
+            return summe;
+        }
     }
 }
