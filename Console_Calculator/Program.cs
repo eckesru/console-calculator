@@ -23,19 +23,28 @@ namespace Console_Calculator
             decimal wert1 = Convert.ToDecimal(wert1_string);
             decimal wert2 = Convert.ToDecimal(wert2_string);
 
-            // Ergebnis berechnen
+            // Ergebnis entsprechend dem Rechenoperator berechnen
             decimal ergebnis = 0;
             if (rechenoperator == "+") {
                 ergebnis = Addieren(wert1, wert2);
+                ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
             } else if (rechenoperator == "-") {
                 ergebnis = Subtrahieren(wert1, wert2);
+                ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
+            } else
+            {
+                Console.WriteLine("Ungültige Eingabe des Rechenoperators.");
             }
 
-            // Ausgeben der Summe beider Werte
-            Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", ergebnis);
+            // Ende des Programms
             WertEinlesen("Zum Beenden Enter drücken...");
            }
 
+        static void ErgebnisAusgabe(decimal wert1, decimal wert2, string rechenoperator, decimal ergebnis)
+        {
+            // String-Ausgabe der Berechnung und des Ergebnisses
+            Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", ergebnis);
+        }
 
         static string WertEinlesen(string ausgabeText)
         {
