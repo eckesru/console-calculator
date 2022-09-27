@@ -9,24 +9,26 @@ namespace Console_Calculator
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe zu berechnen
 
-            //Einlesen und Konvertieren des ersten Werts
-            Console.Write("Bitte gib den ersten Summanden ein: ");
-            decimal summand1 = WertEinlesen();
+            // Einlesen des ersten Werts
+            decimal summand1 = WertEinlesen("Bitte gib den ersten Wert ein: ");
             
-            //Einlesen und Konvertieren des zweiten Werts
-            Console.Write("Bitte gib den zweiten Summanden ein: ");
-            decimal summand2 = WertEinlesen();
+            // Einlesen des zweiten Werts
+            decimal summand2 = WertEinlesen("Bitte gib den zweiten Wert ein: ");
 
-            //Ergebnis berechnen
-            decimal summe = Addieren(summand1, summand2);
+            // Ergebnis berechnen
+            decimal ergebnis = Addieren(summand1, summand2);
 
-            //Ausgeben der Summe beider Werte
-            Console.WriteLine("Die Summe ist: {0}", summe);
+            // Ausgeben der Summe beider Werte
+            Console.WriteLine("Die Summe ist: {0}", ergebnis);
             WarteAufBenutzerEingabe();
            }
 
-        static decimal WertEinlesen()
+        static decimal WertEinlesen(string ausgabeText)
         {
+            // Textausgabe des übergebenen Strings auf der Konsole
+            Console.Write(ausgabeText);
+
+            // Einlesen der Benutzereingabe auf der Konsole und Konvertieren des Werts
             decimal eingabe = Convert.ToDecimal(Console.ReadLine());
 
             return eingabe;
@@ -34,12 +36,14 @@ namespace Console_Calculator
 
         static void WarteAufBenutzerEingabe()
         {
+            // Textausgabe mit Anweisung zum Beenden der Konsole
             Console.Write("Zum Beenden die Enter Taste drücken...");
             Console.ReadLine();
         }
 
         static decimal Addieren(decimal summand1, decimal summand2)
         {
+            // Addition beider übergebenen Werte
             decimal summe = summand1 + summand2;
 
             return summe;
