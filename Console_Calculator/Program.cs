@@ -11,12 +11,12 @@ namespace Console_Calculator
 
             // Einlesen des ersten Werts
             string wert1_string = WertEinlesen("Bitte gib den ersten Wert ein: ");
-            
-            // Einlesen des zweiten Werts
-            string wert2_string = WertEinlesen("Bitte gib den zweiten Wert ein: ");
 
             // Einlesen des Rechenoperators
-            string rechenoperator = WertEinlesen("Bitte gibt den Rechenoperator ein: ");
+            string rechenoperator = WertEinlesen("Bitte gib den Rechenoperator ein (+ oder -): ");
+
+            // Einlesen des zweiten Werts
+            string wert2_string = WertEinlesen("Bitte gib den zweiten Wert ein: ");
 
             // Konvertierung der Eingabewerte in Gleitkommazahlen
             // TODO: Auslagern in Methode
@@ -24,10 +24,15 @@ namespace Console_Calculator
             decimal wert2 = Convert.ToDecimal(wert2_string);
 
             // Ergebnis berechnen
-            decimal ergebnis = Addieren(wert1, wert2);
+            decimal ergebnis = 0;
+            if (rechenoperator == "+") {
+                ergebnis = Addieren(wert1, wert2);
+            } else if (rechenoperator == "-") {
+                ergebnis = Subtrahieren(wert1, wert2);
+            }
 
             // Ausgeben der Summe beider Werte
-            Console.WriteLine("Das Ergebnis lautet: {0}", ergebnis);
+            Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", ergebnis);
             WertEinlesen("Zum Beenden Enter drücken...");
            }
 
