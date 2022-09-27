@@ -3,7 +3,7 @@ User Stories Console_Calculator
 User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
 
 Titel: Addieren
-Story: Als Benutzer möchte ich zwei Zahlen eingeben, um dessen Summe zu berechnen
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe zu berechnen
 Akzeptanzkriterien: 
 	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können addiert werden
 Status:
@@ -14,4 +14,20 @@ Status:
 Titel: Starten
 Story: Als Benutzer möchte ich den Taschenrechner schnell aufrufen können, um mein Ergebnis schnell zu bekommen
 Akzeptanzkriterien: 
-- Die Anwendung wird innerhalb von zwei Sekunden auf dem Rechner gestartet
+	* Die Anwendung wird innerhalb von zwei Sekunden auf dem Rechner gestartet
+Status:
+	* Offen
+
+Titel: Subtrahieren
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Differenz zu berechnen
+Akzeptanzkriterien:
+	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können subtrahiert werden
+Status:
+	* Offen
+
+Titel: Softwarestruktur
+Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um zukünftig einfach weitere Funktionen hinzfügen zu können
+Akzeptanzkriterien:
+	* Das Single Level of Abstraction Prinzip wird eingehalten und Abweichungen sind begründet und dokumentiert
+Status:
+	* Offen

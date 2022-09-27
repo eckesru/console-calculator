@@ -6,7 +6,7 @@ namespace Console_Calculator
     {
         static void Main(string[] args)
         {
-            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen
+            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe zu berechnen
 
             //Einlesen und Konvertieren des ersten Werts
             Console.Write("Bitte gib den ersten Summanden ein: ");
