@@ -13,7 +13,7 @@ namespace Console_Calculator
             string wert1_string = WertEinlesen("Bitte gib den ersten Wert ein: ");
 
             // Einlesen des Rechenoperators
-            string rechenoperator = WertEinlesen("Bitte gib den Rechenoperator ein (+ oder -): ");
+            string rechenoperator = WertEinlesen("Bitte gib den Rechenoperator ein (+, -, *, /, oder %): ");
 
             // Einlesen des zweiten Werts
             string wert2_string = WertEinlesen("Bitte gib den zweiten Wert ein: ");
@@ -38,9 +38,18 @@ namespace Console_Calculator
                     break;
 
                 case "*":
+                    ergebnis = Multiplizieren(wert1, wert2);
+                    ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
+                    break;
+
                 case "/":
+                    ergebnis = Dividieren(wert1, wert2);
+                    ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
+                    break;
+
                 case "%":
-                    Console.WriteLine("Dieser Rechenoperator wird derzeit noch nicht unterstützt.");
+                    ergebnis = Modulo(wert1, wert2);
+                    ErgebnisAusgabe(wert1, wert2, rechenoperator, ergebnis);
                     break;
 
                 default:
@@ -81,9 +90,33 @@ namespace Console_Calculator
         static decimal Subtrahieren(decimal minuend, decimal subtrahend)
         {
             // Subtraktion beider übergebenen Werte
-            decimal summe = minuend - subtrahend;
+            decimal differenz = minuend - subtrahend;
 
-            return summe;
+            return differenz;
+        }
+
+        static decimal Multiplizieren(decimal faktor1, decimal faktor2)
+        {
+            // Multikpkation beider übergebenen Werte
+            decimal produkt = faktor1 * faktor2;
+
+            return produkt;
+        }
+
+        static decimal Dividieren(decimal dividend, decimal divisor)
+        {
+            // Division beider übergebenen Werte
+            decimal quotient = dividend / divisor;
+
+            return quotient;
+        }
+
+        static decimal Modulo(decimal dividend, decimal divisor)
+        {
+            // Modulo beider übergeben Werte
+            decimal rest = dividend % divisor;
+
+            return rest;
         }
     }
 }

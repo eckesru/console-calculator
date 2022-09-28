@@ -16,14 +16,17 @@ Story: Als Benutzer möchte ich den Taschenrechner schnell aufrufen können, um me
 Akzeptanzkriterien: 
 	* Die Anwendung wird innerhalb von zwei Sekunden auf dem Rechner gestartet
 Status:
-	* Offen
+	* Getestet
+	* Erledigt
 
 Titel: Subtrahieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Differenz zu berechnen
 Akzeptanzkriterien:
 	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können subtrahiert werden
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Softwarestruktur
 Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um zukünftig einfach weitere Funktionen hinzfügen zu können
@@ -32,3 +35,24 @@ Akzeptanzkriterien:
 Status:
 	* Umgesetzt
 	* Erledigt
+
+Titel: Multiplikation
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Produkt zu berechnen
+Akzeptanzkriterien:
+	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können multipliziert werden
+Status:
+	* Offen
+
+Titel: Division
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Quotient zu berechnen
+Akzeptanzkriterien:
+	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können dividiert werden
+Status:
+	* Offen
+
+Titel: Modulo
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um die Division mit Rest zu berechnen
+Akzeptanzkriterien:
+	* Zu Gleitkommazahlen zwischen -1000.00 und 1000.00 kann der Divisionsrest berechnet werden
+Status:
+	* Offen
