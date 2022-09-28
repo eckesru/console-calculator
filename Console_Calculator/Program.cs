@@ -24,16 +24,33 @@ namespace Console_Calculator
             decimal wert2 = Convert.ToDecimal(wert2_string);
 
             // Ergebnis berechnen
-            BerechneErgebnis(wert1, rechenoperator, wert2);
+            decimal ergebnis = BerechneErgebnis(wert1, rechenoperator, wert2);
+
+            // Ergebnis ausgeben
+            ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
 
             // Ende des Programms
             WertEinlesen("Zum Beenden Enter drücken...");
-           }
+        }
 
         static void ErgebnisAusgabe(decimal wert1, string rechenoperator, decimal wert2, decimal ergebnis)
         {
-            // String-Ausgabe der Berechnung und des Ergebnisses
-            Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", ergebnis);
+            switch (rechenoperator)
+            {
+
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                case "%":
+                    // String-Ausgabe der Berechnung und des Ergebnisses
+                    Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", ergebnis);
+                    break;
+
+                default:
+                    Console.WriteLine("Ungültige Eingabe des Rechenoperators.");
+                    break;
+            }
         }
 
         static string WertEinlesen(string ausgabeText)
@@ -55,7 +72,7 @@ namespace Console_Calculator
             return summe;
 
         }
-        
+
         static decimal Subtrahieren(decimal minuend, decimal subtrahend)
         {
             // Subtraktion beider übergebenen Werte
@@ -88,7 +105,7 @@ namespace Console_Calculator
             return rest;
         }
 
-        static void BerechneErgebnis(decimal wert1, string rechenoperator, decimal wert2)
+        static decimal BerechneErgebnis(decimal wert1, string rechenoperator, decimal wert2)
         {
             // Ergebnis entsprechend dem Rechenoperator berechnen
             decimal ergebnis = 0;
@@ -96,33 +113,26 @@ namespace Console_Calculator
             {
                 case "+":
                     ergebnis = Addieren(wert1, wert2);
-                    ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
                     break;
 
                 case "-":
                     ergebnis = Subtrahieren(wert1, wert2);
-                    ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
                     break;
 
                 case "*":
                     ergebnis = Multiplizieren(wert1, wert2);
-                    ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
                     break;
 
                 case "/":
                     ergebnis = Dividieren(wert1, wert2);
-                    ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
                     break;
 
                 case "%":
                     ergebnis = Modulo(wert1, wert2);
-                    ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
-                    break;
-
-                default:
-                    Console.WriteLine("Ungültige Eingabe des Rechenoperators.");
                     break;
             }
+
+            return ergebnis;
         }
     }
 }
