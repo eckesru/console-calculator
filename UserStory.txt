@@ -56,3 +56,30 @@ Akzeptanzkriterien:
 	* Zu Gleitkommazahlen zwischen -1000.00 und 1000.00 kann der Divisionsrest berechnet werden
 Status:
 	* Offen
+
+Titel: ObjektOrientierung
+Story: Als Entwickler möchte ich die Anwendung objektorientiert entwickeln, um später weitere Funktionalitäten hinzufügen zu können
+Akzeptanzkriterien:
+	* Die Aufteilung der Funktionalitäten auf Klassen folgt dem Prinzip Seperation of Concerns (SoC)
+	* Bei der Erstellung von Klassen und Methoden wird das Prinzip Don't Repeat Yourself (DRY) eingehalten
+Hinweis:
+	* Diese User Story ist eine Erweiterung zu User Story ""Softwarestruktur""
+Status:
+	* Offen
+
+Titel: Fortlaufende Berechnung
+Story: Als Benutzer möchte ich eine weitere Zahl eingeben, um eine neue Operation mit dem vorherigen Ergebnis durchzuführen
+Akzeptanzkriterien:
+	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können eingegeben werden
+	* Ein neuer Rechenoperator kann eingegeben werden
+	* Das neue Ergebnis berücksichtigt das alte Ergebnis sowie die neuen Eingaben
+Status:
+	* Offen
+
+Titel: Beenden
+Story: Als Benutzer möchte ich "Fertig" eingeben, um den Taschenrechner zu beenden.
+Akzeptanzkrtierien:
+	* Taschenrechner wird beendet, wenn "Fertig" vom Benutzer eingeben wird
+	* Es gibt hierzu einen Hinweis für den Benutzer
+Status:
+	* Offen
