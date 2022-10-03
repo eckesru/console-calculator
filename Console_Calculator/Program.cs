@@ -7,8 +7,10 @@ namespace Console_Calculator
     {
         static void Main(string[] args)
         {
+            CalculatorModel calculatorModel = new CalculatorModel();
+            ConsoleView consoleView = new ConsoleView(calculatorModel);
+
             // Einlesen des ersten Werts
-            ConsoleView consoleView = new ConsoleView();
             string wert1_string = consoleView.WertEinlesen("Bitte gib den ersten Wert ein: ");
 
             // Einlesen des Rechenoperators
@@ -23,11 +25,10 @@ namespace Console_Calculator
             decimal wert2 = Convert.ToDecimal(wert2_string);
 
             // Ergebnis berechnen
-            CalculatorModel calculatorModel = new CalculatorModel();
             calculatorModel.Berechne(wert1, rechenoperator, wert2);
 
             // Ergebnis ausgeben
-            consoleView.ErgebnisAusgabe(wert1, rechenoperator, wert2, calculatorModel.Ergebnis);
+            consoleView.ErgebnisAusgabe(wert1, rechenoperator, wert2);
 
             // Ende des Programms
             consoleView.WertEinlesen("Zum Beenden Enter drücken...");

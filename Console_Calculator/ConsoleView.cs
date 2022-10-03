@@ -8,9 +8,13 @@ namespace Console_Calculator
 {
     internal class ConsoleView
     {
-        public ConsoleView() { }
+        private CalculatorModel calculatorModel;
+        public ConsoleView(CalculatorModel calculatorModel)
+        {
+            this.calculatorModel = calculatorModel;
+        }
 
-        public void ErgebnisAusgabe(decimal wert1, string rechenoperator, decimal wert2, decimal ergebnis)
+        public void ErgebnisAusgabe(decimal wert1, string rechenoperator, decimal wert2)
         {
             switch (rechenoperator)
             {
@@ -21,7 +25,7 @@ namespace Console_Calculator
                 case "/":
                 case "%":
                     // String-Ausgabe der Berechnung und des Ergebnisses
-                    Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", ergebnis);
+                    Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", calculatorModel.Ergebnis);
                     break;
 
                 default:
