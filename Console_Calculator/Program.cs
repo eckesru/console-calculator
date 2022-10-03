@@ -24,7 +24,8 @@ namespace Console_Calculator
             decimal wert2 = Convert.ToDecimal(wert2_string);
 
             // Ergebnis berechnen
-            decimal ergebnis = BerechneErgebnis(wert1, rechenoperator, wert2);
+            CalculatorModel calculatorModel = new CalculatorModel();
+            decimal ergebnis = calculatorModel.Berechne(wert1, rechenoperator, wert2);
 
             // Ergebnis ausgeben
             ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
@@ -64,75 +65,6 @@ namespace Console_Calculator
             return eingabe;
         }
 
-        static decimal Addieren(decimal summand1, decimal summand2)
-        {
-            // Addition beider übergebenen Werte
-            decimal summe = summand1 + summand2;
 
-            return summe;
-
-        }
-
-        static decimal Subtrahieren(decimal minuend, decimal subtrahend)
-        {
-            // Subtraktion beider übergebenen Werte
-            decimal differenz = minuend - subtrahend;
-
-            return differenz;
-        }
-
-        static decimal Multiplizieren(decimal faktor1, decimal faktor2)
-        {
-            // Multikpkation beider übergebenen Werte
-            decimal produkt = faktor1 * faktor2;
-
-            return produkt;
-        }
-
-        static decimal Dividieren(decimal dividend, decimal divisor)
-        {
-            // Division beider übergebenen Werte
-            decimal quotient = dividend / divisor;
-
-            return quotient;
-        }
-
-        static decimal Modulo(decimal dividend, decimal divisor)
-        {
-            // Modulo beider übergeben Werte
-            decimal rest = dividend % divisor;
-
-            return rest;
-        }
-
-        static decimal BerechneErgebnis(decimal wert1, string rechenoperator, decimal wert2)
-        {
-            // Ergebnis entsprechend dem Rechenoperator berechnen
-            decimal ergebnis = 0;
-            switch (rechenoperator)
-            {
-                case "+":
-                    ergebnis = Addieren(wert1, wert2);
-                    break;
-
-                case "-":
-                    ergebnis = Subtrahieren(wert1, wert2);
-                    break;
-
-                case "*":
-                    ergebnis = Multiplizieren(wert1, wert2);
-                    break;
-
-                case "/":
-                    ergebnis = Dividieren(wert1, wert2);
-                    break;
-
-                case "%":
-                    ergebnis = Modulo(wert1, wert2);
-                    break;
-            }
-
-            return ergebnis;
-        }
     }
 }
