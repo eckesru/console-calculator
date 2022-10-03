@@ -25,10 +25,10 @@ namespace Console_Calculator
 
             // Ergebnis berechnen
             CalculatorModel calculatorModel = new CalculatorModel();
-            decimal ergebnis = calculatorModel.Berechne(wert1, rechenoperator, wert2);
+            calculatorModel.Berechne(wert1, rechenoperator, wert2);
 
             // Ergebnis ausgeben
-            ErgebnisAusgabe(wert1, rechenoperator, wert2, ergebnis);
+            ErgebnisAusgabe(wert1, rechenoperator, wert2, calculatorModel.Ergebnis);
 
             // Ende des Programms
             WertEinlesen("Zum Beenden Enter drücken...");

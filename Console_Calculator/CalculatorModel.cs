@@ -7,35 +7,39 @@ using System.Threading.Tasks;
 namespace Console_Calculator
 {
     internal class CalculatorModel
+
     {
-        public decimal Berechne(decimal wert1, string rechenoperator, decimal wert2)
+        public CalculatorModel()
+        {
+            Ergebnis = 0;
+        }
+        public decimal Ergebnis { get; private set; }
+
+        public void Berechne(decimal wert1, string rechenoperator, decimal wert2)
         {
             // Ergebnis entsprechend dem Rechenoperator berechnen
-            decimal ergebnis = 0;
             switch (rechenoperator)
             {
                 case "+":
-                    ergebnis = Addieren(wert1, wert2);
+                    Ergebnis = Addieren(wert1, wert2);
                     break;
 
                 case "-":
-                    ergebnis = Subtrahieren(wert1, wert2);
+                    Ergebnis = Subtrahieren(wert1, wert2);
                     break;
 
                 case "*":
-                    ergebnis = Multiplizieren(wert1, wert2);
+                    Ergebnis = Multiplizieren(wert1, wert2);
                     break;
 
                 case "/":
-                    ergebnis = Dividieren(wert1, wert2);
+                    Ergebnis = Dividieren(wert1, wert2);
                     break;
 
                 case "%":
-                    ergebnis = Modulo(wert1, wert2);
+                    Ergebnis = Modulo(wert1, wert2);
                     break;
             }
-
-            return ergebnis;
         }
 
         private decimal Addieren(decimal summand1, decimal summand2)
