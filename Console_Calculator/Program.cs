@@ -11,13 +11,13 @@ namespace Console_Calculator
             ConsoleView consoleView = new ConsoleView(calculatorModel);
 
             // Einlesen des ersten Werts
-            string wert1_string = consoleView.WertEinlesen("Bitte gib den ersten Wert ein: ");
+            string wert1_string = consoleView.ZahlEinlesen();
 
             // Einlesen des Rechenoperators
-            string rechenoperator = consoleView.WertEinlesen("Bitte gib den Rechenoperator ein (+, -, *, /, oder %): ");
+            string rechenoperator = consoleView.OperatorEinlesen();
 
             // Einlesen des zweiten Werts
-            string wert2_string = consoleView.WertEinlesen("Bitte gib den zweiten Wert ein: ");
+            string wert2_string = consoleView.ZahlEinlesen();
 
             // Konvertierung der Eingabewerte in Gleitkommazahlen
             // TODO: Auslagern in Methode
@@ -31,7 +31,7 @@ namespace Console_Calculator
             consoleView.ErgebnisAusgabe(wert1, rechenoperator, wert2);
 
             // Ende des Programms
-            consoleView.WertEinlesen("Zum Beenden Enter drücken...");
+            consoleView.Beenden();
         }
 
 

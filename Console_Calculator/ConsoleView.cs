@@ -34,16 +34,25 @@ namespace Console_Calculator
             }
         }
 
-        public string WertEinlesen(string ausgabeText)
+        public string ZahlEinlesen()
         {
-            // Textausgabe des übergebenen Strings auf der Konsole
-            Console.Write(ausgabeText);
-
-            // Einlesen der Eingabe auf der Konsole
-            string eingabe = Console.ReadLine()!;
-
-            return eingabe;
+            Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
+            // Einlesen der Zahl auf der Konsole
+            return Console.ReadLine()!;
         }
 
+        public String OperatorEinlesen()
+        {
+            Console.Write("Bitte gib den Rechenoperator ein (+, -, *, /, oder %): ");
+            //Einlesen des Operators auf der Konsole
+            return Console.ReadLine()!;
+        }
+
+        public void Beenden()
+        {
+            Console.Write("Zum Beenden Enter drücken...");
+            // Ende des Programms
+            Console.ReadLine();
+        }
     }
 }
