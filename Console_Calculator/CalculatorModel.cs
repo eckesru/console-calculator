@@ -15,38 +15,35 @@ namespace Console_Calculator
             Rechenoperator = "?";
         }
 
-        public decimal Wert1 { get; private set; }
-        public string Rechenoperator { get; private set; }
-        public decimal Wert2 { get; private set; }
+        public decimal Wert1 { get; set; }
+        public string Rechenoperator { get; set; }
+        public decimal Wert2 { get; set; }
         public decimal Ergebnis { get; private set; }
 
-        public void Berechne(decimal wert1, string rechenoperator, decimal wert2)
+        public void Berechne()
         {
-            this.Wert1 = wert1;
-            this.Rechenoperator = rechenoperator;
-            this.Wert2 = wert2;
 
             // Ergebnis entsprechend dem Rechenoperator berechnen
-            switch (rechenoperator)
+            switch (Rechenoperator)
             {
                 case "+":
-                    Ergebnis = Addieren(wert1, wert2);
+                    Ergebnis = Addieren(Wert1, Wert2);
                     break;
 
                 case "-":
-                    Ergebnis = Subtrahieren(wert1, wert2);
+                    Ergebnis = Subtrahieren(Wert1, Wert2);
                     break;
 
                 case "*":
-                    Ergebnis = Multiplizieren(wert1, wert2);
+                    Ergebnis = Multiplizieren(Wert1, Wert2);
                     break;
 
                 case "/":
-                    Ergebnis = Dividieren(wert1, wert2);
+                    Ergebnis = Dividieren(Wert1, Wert2);
                     break;
 
                 case "%":
-                    Ergebnis = Modulo(wert1, wert2);
+                    Ergebnis = Modulo(Wert1, Wert2);
                     break;
             }
         }

@@ -20,17 +20,11 @@ namespace Console_Calculator
 
         public void Ausfuehren()
         {
-            // Einlesen des ersten Werts
-            decimal wert1 = consoleView.ZahlEinlesen();
-
-            // Einlesen des Rechenoperators
-            string rechenoperator = consoleView.OperatorEinlesen();
-
-            // Einlesen des zweiten Werts
-            decimal wert2 = consoleView.ZahlEinlesen();
+            // Einlesen des Benutzereingaben Wert1, Rechenoperator und Wert2
+            consoleView.EingabenEinlesen();
 
             // Ergebnis berechnen
-            calculatorModel.Berechne(wert1, rechenoperator, wert2);
+            calculatorModel.Berechne();
 
             // Ergebnis ausgeben
             consoleView.ErgebnisAusgabe();
