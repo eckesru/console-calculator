@@ -21,18 +21,13 @@ namespace Console_Calculator
         public void Ausfuehren()
         {
             // Einlesen des ersten Werts
-            string wert1_string = consoleView.ZahlEinlesen();
+            decimal wert1 = consoleView.ZahlEinlesen();
 
             // Einlesen des Rechenoperators
             string rechenoperator = consoleView.OperatorEinlesen();
 
             // Einlesen des zweiten Werts
-            string wert2_string = consoleView.ZahlEinlesen();
-
-            // Konvertierung der Eingabewerte in Gleitkommazahlen
-            // TODO: Auslagern in Methode
-            decimal wert1 = Convert.ToDecimal(wert1_string);
-            decimal wert2 = Convert.ToDecimal(wert2_string);
+            decimal wert2 = consoleView.ZahlEinlesen();
 
             // Ergebnis berechnen
             calculatorModel.Berechne(wert1, rechenoperator, wert2);

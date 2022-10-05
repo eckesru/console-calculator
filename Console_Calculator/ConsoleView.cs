@@ -34,14 +34,14 @@ namespace Console_Calculator
             }
         }
 
-        public string ZahlEinlesen()
+        public decimal ZahlEinlesen()
         {
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
-            // Einlesen der Zahl auf der Konsole
-            return Console.ReadLine()!;
+            // Einlesen der Zahl auf der Konsole und Konvertierung des Strings in Decimal
+            return Convert.ToDecimal(Console.ReadLine());
         }
 
-        public String OperatorEinlesen()
+        public string OperatorEinlesen()
         {
             Console.Write("Bitte gib den Rechenoperator ein (+, -, *, /, oder %): ");
             //Einlesen des Operators auf der Konsole
