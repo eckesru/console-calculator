@@ -16,6 +16,7 @@ Story: Als Benutzer möchte ich den Taschenrechner schnell aufrufen können, um me
 Akzeptanzkriterien: 
 	* Die Anwendung wird innerhalb von zwei Sekunden auf dem Rechner gestartet
 Status:
+	* Implementiert
 	* Getestet
 	* Erledigt
 
@@ -33,7 +34,8 @@ Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um zukünfti
 Akzeptanzkriterien:
 	* Das Single Level of Abstraction Prinzip wird eingehalten und Abweichungen sind begründet und dokumentiert
 Status:
-	* Umgesetzt
+	* Implementiert
+	* Getestet
 	* Erledigt
 
 Titel: Multiplikation
@@ -41,21 +43,26 @@ Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Produkt zu berechn
 Akzeptanzkriterien:
 	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können multipliziert werden
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Division
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Quotient zu berechnen
 Akzeptanzkriterien:
 	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können dividiert werden
-Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Modulo
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um die Division mit Rest zu berechnen
 Akzeptanzkriterien:
 	* Zu Gleitkommazahlen zwischen -1000.00 und 1000.00 kann der Divisionsrest berechnet werden
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: ObjektOrientierung
 Story: Als Entwickler möchte ich die Anwendung objektorientiert entwickeln, um später weitere Funktionalitäten hinzufügen zu können
@@ -65,21 +72,27 @@ Akzeptanzkriterien:
 Hinweis:
 	* Diese User Story ist eine Erweiterung zu User Story "Softwarestruktur"
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Fortlaufende Berechnung
-Story: Als Benutzer möchte ich eine weitere Zahl eingeben, um eine neue Operation mit dem vorherigen Ergebnis durchzuführen
+Story: Als Benutzer möchte ich eine weitere Zahl eingeben können, um eine neue Operation mit dem vorherigen Ergebnis durchzuführen
 Akzeptanzkriterien:
 	* Gleitkommazahlen zwischen -1000.00 und 1000.00 können eingegeben werden
 	* Ein neuer Rechenoperator kann eingegeben werden
 	* Das neue Ergebnis berücksichtigt das alte Ergebnis sowie die neuen Eingaben
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Beenden
 Story: Als Benutzer möchte ich "Fertig" eingeben, um den Taschenrechner zu beenden.
 Akzeptanzkrtierien:
-	* Taschenrechner wird beendet, wenn "Fertig" vom Benutzer eingeben wird
+	* Taschenrechner wird beendet, wenn "Ende" vom Benutzer eingeben wird
 	* Es gibt hierzu einen Hinweis für den Benutzer
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
