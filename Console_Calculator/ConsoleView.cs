@@ -81,7 +81,6 @@ namespace Console_Calculator
             BenutzerWunsch = Console.ReadLine()!;
             BenutzerWunschAuswerten();
 
-            Console.Write(Environment.NewLine);
         }
 
         private void BenutzerWunschAuswerten()
@@ -91,10 +90,12 @@ namespace Console_Calculator
                 case "Neu":
                 case "Weiter":
                     endeWunsch = false;
+                    Console.Write(Environment.NewLine);
                     break;
 
                 case "Ende":
                     endeWunsch = true;
+                    Console.Write(Environment.NewLine);
                     break;
 
 
