@@ -14,9 +14,9 @@ namespace Console_Calculator
             this.calculatorModel = calculatorModel;
         }
 
-        public void ErgebnisAusgabe(decimal wert1, string rechenoperator, decimal wert2)
+        public void ErgebnisAusgabe()
         {
-            switch (rechenoperator)
+            switch (calculatorModel.Rechenoperator)
             {
 
                 case "+":
@@ -25,7 +25,7 @@ namespace Console_Calculator
                 case "/":
                 case "%":
                     // String-Ausgabe der Berechnung und des Ergebnisses
-                    Console.WriteLine("Ergebnis: " + wert1 + " " + rechenoperator + " " + wert2 + " = {0}", calculatorModel.Ergebnis);
+                    Console.WriteLine("Ergebnis: " + calculatorModel.Wert1 + " " + calculatorModel.Rechenoperator + " " + calculatorModel.Wert2 + " = {0}", calculatorModel.Ergebnis);
                     break;
 
                 default:

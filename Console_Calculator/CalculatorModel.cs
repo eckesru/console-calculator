@@ -12,11 +12,20 @@ namespace Console_Calculator
         public CalculatorModel()
         {
             Ergebnis = 0;
+            Rechenoperator = "?";
         }
+
+        public decimal Wert1 { get; private set; }
+        public string Rechenoperator { get; private set; }
+        public decimal Wert2 { get; private set; }
         public decimal Ergebnis { get; private set; }
 
         public void Berechne(decimal wert1, string rechenoperator, decimal wert2)
         {
+            this.Wert1 = wert1;
+            this.Rechenoperator = rechenoperator;
+            this.Wert2 = wert2;
+
             // Ergebnis entsprechend dem Rechenoperator berechnen
             switch (rechenoperator)
             {

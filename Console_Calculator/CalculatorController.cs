@@ -33,7 +33,7 @@ namespace Console_Calculator
             calculatorModel.Berechne(wert1, rechenoperator, wert2);
 
             // Ergebnis ausgeben
-            consoleView.ErgebnisAusgabe(wert1, rechenoperator, wert2);
+            consoleView.ErgebnisAusgabe();
 
             // Ende des Programms
             consoleView.Beenden();
