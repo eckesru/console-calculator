@@ -20,15 +20,20 @@ namespace Console_Calculator
 
         public void Ausfuehren()
         {
-            // Einlesen des Benutzereingaben Wert1, Rechenoperator und Wert2
-            consoleView.EingabenEinlesen();
+            while (!consoleView.endeWunsch)
+            {
+                        // Einlesen des Benutzereingaben Wert1, Rechenoperator und Wert2
+                        consoleView.EingabenEinlesen();
 
-            // Ergebnis berechnen
-            calculatorModel.Berechne();
+                        // Ergebnis berechnen
+                        calculatorModel.Berechne();
 
-            // Ergebnis ausgeben
-            consoleView.ErgebnisAusgabe();
+                        // Ergebnis ausgeben
+                        consoleView.ErgebnisAusgabe();
 
+                        //Weiteres Verfahren vom Benutzer Abfragen: Weiter, Neu oder Ende
+                        consoleView.BenutzerWunschAbfragen();
+                }
             // Ende des Programms
             consoleView.Beenden();
         }

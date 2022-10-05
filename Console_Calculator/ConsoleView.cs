@@ -12,7 +12,13 @@ namespace Console_Calculator
         public ConsoleView(CalculatorModel calculatorModel)
         {
             this.calculatorModel = calculatorModel;
+            BenutzerWunsch = "Neu";
+            endeWunsch = false;
+
         }
+
+        public bool endeWunsch { get; private set; }
+        public string BenutzerWunsch { get; private set; }
 
         public void ErgebnisAusgabe()
         {
@@ -36,9 +42,19 @@ namespace Console_Calculator
 
         public void EingabenEinlesen()
         {
-            calculatorModel.Wert1 = ZahlEinlesen();
-            calculatorModel.Rechenoperator = OperatorEinlesen();
-            calculatorModel.Wert2 = ZahlEinlesen();
+            if (BenutzerWunsch == "Neu")
+            {
+                calculatorModel.Wert1 = ZahlEinlesen();
+                calculatorModel.Rechenoperator = OperatorEinlesen();
+                calculatorModel.Wert2 = ZahlEinlesen();
+            }
+            else if (BenutzerWunsch == "Weiter")
+            {
+                calculatorModel.Wert1 = calculatorModel.Ergebnis;
+                Console.WriteLine("Ergebnis der vorherigen Berechnung: {0}", calculatorModel.Wert1);
+                calculatorModel.Rechenoperator = OperatorEinlesen();
+                calculatorModel.Wert2 = ZahlEinlesen();
+            }
         }
 
         private decimal ZahlEinlesen()
@@ -53,6 +69,40 @@ namespace Console_Calculator
             Console.Write("Bitte gib den Rechenoperator ein (+, -, *, /, oder %): ");
             //Einlesen des Operators auf der Konsole
             return Console.ReadLine()!;
+        }
+
+        public void BenutzerWunschAbfragen()
+        {
+            // Fügt einen Zeilenumbruch ein
+            Console.Write(Environment.NewLine);
+
+            // Einlesen der gewünschten Option
+            Console.Write("Bitte Option eingeben [ Neu | Weiter | Ende ]: ");
+            BenutzerWunsch = Console.ReadLine()!;
+            BenutzerWunschAuswerten();
+
+            Console.Write(Environment.NewLine);
+        }
+
+        private void BenutzerWunschAuswerten()
+        {
+            switch(BenutzerWunsch)
+            {
+                case "Neu":
+                case "Weiter":
+                    endeWunsch = false;
+                    break;
+
+                case "Ende":
+                    endeWunsch = true;
+                    break;
+
+
+                default:
+                    Console.WriteLine("Ungültige Eingabe.");
+                    BenutzerWunschAbfragen();
+                    break;
+            }
         }
 
         public void Beenden()

@@ -63,7 +63,7 @@ Akzeptanzkriterien:
 	* Die Aufteilung der Funktionalitäten auf Klassen folgt dem Prinzip Seperation of Concerns (SoC)
 	* Bei der Erstellung von Klassen und Methoden wird das Prinzip Don't Repeat Yourself (DRY) eingehalten
 Hinweis:
-	* Diese User Story ist eine Erweiterung zu User Story ""Softwarestruktur""
+	* Diese User Story ist eine Erweiterung zu User Story "Softwarestruktur"
 Status:
 	* Offen
 
