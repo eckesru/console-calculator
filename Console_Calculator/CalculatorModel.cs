@@ -22,29 +22,35 @@ namespace Console_Calculator
 
         public void Berechne()
         {
-
-            // Ergebnis entsprechend dem Rechenoperator berechnen
-            switch (Rechenoperator)
+            try
             {
-                case "+":
-                    Ergebnis = Addieren(Wert1, Wert2);
-                    break;
+                // Ergebnis entsprechend dem Rechenoperator berechnen
+                switch (Rechenoperator)
+                {
+                    case "+":
+                        Ergebnis = Addieren(Wert1, Wert2);
+                        break;
 
-                case "-":
-                    Ergebnis = Subtrahieren(Wert1, Wert2);
-                    break;
+                    case "-":
+                        Ergebnis = Subtrahieren(Wert1, Wert2);
+                        break;
 
-                case "*":
-                    Ergebnis = Multiplizieren(Wert1, Wert2);
-                    break;
+                    case "*":
+                        Ergebnis = Multiplizieren(Wert1, Wert2);
+                        break;
 
-                case "/":
-                    Ergebnis = Dividieren(Wert1, Wert2);
-                    break;
+                    case "/":
+                        Ergebnis = Dividieren(Wert1, Wert2);
+                        break;
 
-                case "%":
-                    Ergebnis = Modulo(Wert1, Wert2);
-                    break;
+                    case "%":
+                        Ergebnis = Modulo(Wert1, Wert2);
+                        break;
+                }
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Fehler: Division durch 0 nicht möglich.");
             }
         }
 

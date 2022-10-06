@@ -28,6 +28,8 @@ namespace Console_Calculator
 
         public void ErgebnisAusgabe()
         {
+            // Ausgabe des Ergebnisses erfolgt nur, wenn nicht durch die Zahl 0 dividert werden sollte
+            if(!((calculatorModel.Rechenoperator == "/" || calculatorModel.Rechenoperator == "%") && (calculatorModel.Wert2 == 0)))
             // String-Ausgabe der Berechnung und des Ergebnisses
             Console.WriteLine("Ergebnis: " + calculatorModel.Wert1 + " " + calculatorModel.Rechenoperator + " " + calculatorModel.Wert2 + " = {0}", calculatorModel.Ergebnis);
         }
@@ -127,7 +129,7 @@ namespace Console_Calculator
 
 
                 default:
-                    Console.WriteLine("Ungültige Eingabe.");
+                    Console.WriteLine("Ungültige Eingabe der Option.");
                     BenutzerWunschAbfragen();
                     break;
             }
@@ -135,7 +137,7 @@ namespace Console_Calculator
 
         public void Beenden()
         {
-            Console.Write("Zum Beenden Enter drücken...");
+            Console.Write("Zum Beenden mit Enter bestätigen...");
             // Ende des Programms
             Console.ReadLine();
         }
