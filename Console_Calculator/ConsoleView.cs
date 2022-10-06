@@ -12,13 +12,19 @@ namespace Console_Calculator
         public ConsoleView(CalculatorModel calculatorModel)
         {
             this.calculatorModel = calculatorModel;
-            BenutzerWunsch = "Neu";
-            endeWunsch = false;
+            BenutzerWunsch = BenutzerWunschMoeglichkeiten.Neu;
+            EndeWunsch = false;
 
         }
 
-        public bool endeWunsch { get; private set; }
-        public string BenutzerWunsch { get; private set; }
+        public enum BenutzerWunschMoeglichkeiten
+        {
+            Neu,
+            Weiter,
+            Ende
+        }
+        public bool EndeWunsch { get; private set; }
+        public BenutzerWunschMoeglichkeiten BenutzerWunsch { get; private set; }
 
         public void ErgebnisAusgabe()
         {
@@ -28,11 +34,11 @@ namespace Console_Calculator
 
         public void EingabenEinlesen()
         {
-            if (BenutzerWunsch == "Neu")
+            if (BenutzerWunsch == BenutzerWunschMoeglichkeiten.Neu)
             {
                 calculatorModel.Wert1 = ZahlEinlesen();
             }
-            else if (BenutzerWunsch == "Weiter")
+            else if (BenutzerWunsch == BenutzerWunschMoeglichkeiten.Weiter)
             {
                 calculatorModel.Wert1 = calculatorModel.Ergebnis;
                 Console.WriteLine("Ergebnis der vorherigen Berechnung: {0}", calculatorModel.Wert1);
@@ -92,23 +98,30 @@ namespace Console_Calculator
 
             // Einlesen der gewünschten Option
             Console.Write("Bitte Option eingeben [ Neu | Weiter | Ende ]: ");
-            BenutzerWunsch = Console.ReadLine()!;
-            BenutzerWunschAuswerten();
+            string benutzerWunsch = Console.ReadLine()!;
+            BenutzerWunschAuswerten(benutzerWunsch);
 
         }
 
-        private void BenutzerWunschAuswerten()
+        private void BenutzerWunschAuswerten(string benutzerWunsch)
         {
-            switch (BenutzerWunsch)
+            switch (benutzerWunsch)
             {
                 case "Neu":
+                    BenutzerWunsch = BenutzerWunschMoeglichkeiten.Neu;
+                    EndeWunsch = false;
+                    Console.Write(Environment.NewLine);
+                    break;
+
                 case "Weiter":
-                    endeWunsch = false;
+                    BenutzerWunsch = BenutzerWunschMoeglichkeiten.Weiter;
+                    EndeWunsch = false;
                     Console.Write(Environment.NewLine);
                     break;
 
                 case "Ende":
-                    endeWunsch = true;
+                    BenutzerWunsch = BenutzerWunschMoeglichkeiten.Ende;
+                    EndeWunsch = true;
                     Console.Write(Environment.NewLine);
                     break;
 

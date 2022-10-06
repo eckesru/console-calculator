@@ -20,7 +20,7 @@ namespace Console_Calculator
 
         public void Ausfuehren()
         {
-            while (!consoleView.endeWunsch)
+            while (!consoleView.EndeWunsch)
             {
                         // Einlesen des Benutzereingaben Wert1, Rechenoperator und Wert2
                         consoleView.EingabenEinlesen();
