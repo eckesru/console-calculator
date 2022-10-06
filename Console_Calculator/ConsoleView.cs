@@ -22,22 +22,8 @@ namespace Console_Calculator
 
         public void ErgebnisAusgabe()
         {
-            switch (calculatorModel.Rechenoperator)
-            {
-
-                case "+":
-                case "-":
-                case "*":
-                case "/":
-                case "%":
-                    // String-Ausgabe der Berechnung und des Ergebnisses
-                    Console.WriteLine("Ergebnis: " + calculatorModel.Wert1 + " " + calculatorModel.Rechenoperator + " " + calculatorModel.Wert2 + " = {0}", calculatorModel.Ergebnis);
-                    break;
-
-                default:
-                    Console.WriteLine("Ungültige Eingabe des Rechenoperators.");
-                    break;
-            }
+            // String-Ausgabe der Berechnung und des Ergebnisses
+            Console.WriteLine("Ergebnis: " + calculatorModel.Wert1 + " " + calculatorModel.Rechenoperator + " " + calculatorModel.Wert2 + " = {0}", calculatorModel.Ergebnis);
         }
 
         public void EingabenEinlesen()
@@ -58,19 +44,20 @@ namespace Console_Calculator
         private decimal ZahlEinlesen()
         {
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
-            // Einlesen der Zahl auf der Konsole und Konvertierung des Strings in Decimal
-           try
+
+            try
             {
+                // Einlesen der Zahl auf der Konsole und Konvertierung des Strings in Decimal
                 return Convert.ToDecimal(Console.ReadLine());
             }
             catch (FormatException)
             {
-                Console.WriteLine("Ungültige Eingabe der Zahl.");
+                Console.WriteLine("Fehler: Ungültige Eingabe der Zahl.");
                 return ZahlEinlesen();
             }
             catch (OverflowException)
             {
-                Console.WriteLine("Fehler: Es können nur Gleitkommazahlen zwischen " + Decimal.MinValue + " und " + Decimal.MaxValue + " berechnet werden.");
+                Console.WriteLine("Fehler: Es können nur Zahlen zwischen " + Decimal.MinValue + " und " + Decimal.MaxValue + " berechnet werden.");
                 return ZahlEinlesen();
             }
 
@@ -80,8 +67,22 @@ namespace Console_Calculator
         private string OperatorEinlesen()
         {
             Console.Write("Bitte gib den Rechenoperator ein (+, -, *, /, oder %): ");
-            //Einlesen des Operators auf der Konsole
-            return Console.ReadLine()!;
+            string operator_eingabe = Console.ReadLine()!;
+            switch (operator_eingabe)
+            {
+
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                case "%":
+                    //Einlesen des Operators auf der Konsole
+                    return operator_eingabe;
+
+                default:
+                    Console.WriteLine("Fehler: Ungültige Eingabe des Rechenoperators.");
+                    return OperatorEinlesen();
+            }
         }
 
         public void BenutzerWunschAbfragen()
@@ -98,7 +99,7 @@ namespace Console_Calculator
 
         private void BenutzerWunschAuswerten()
         {
-            switch(BenutzerWunsch)
+            switch (BenutzerWunsch)
             {
                 case "Neu":
                 case "Weiter":
