@@ -45,16 +45,14 @@ namespace Console_Calculator
             if (BenutzerWunsch == "Neu")
             {
                 calculatorModel.Wert1 = ZahlEinlesen();
-                calculatorModel.Rechenoperator = OperatorEinlesen();
-                calculatorModel.Wert2 = ZahlEinlesen();
             }
             else if (BenutzerWunsch == "Weiter")
             {
                 calculatorModel.Wert1 = calculatorModel.Ergebnis;
                 Console.WriteLine("Ergebnis der vorherigen Berechnung: {0}", calculatorModel.Wert1);
-                calculatorModel.Rechenoperator = OperatorEinlesen();
-                calculatorModel.Wert2 = ZahlEinlesen();
             }
+            calculatorModel.Rechenoperator = OperatorEinlesen();
+            calculatorModel.Wert2 = ZahlEinlesen();
         }
 
         private decimal ZahlEinlesen()
