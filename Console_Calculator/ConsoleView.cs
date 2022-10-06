@@ -59,7 +59,22 @@ namespace Console_Calculator
         {
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
             // Einlesen der Zahl auf der Konsole und Konvertierung des Strings in Decimal
-            return Convert.ToDecimal(Console.ReadLine());
+           try
+            {
+                return Convert.ToDecimal(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Ungültige Eingabe der Zahl.");
+                return ZahlEinlesen();
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Fehler: Es können nur Gleitkommazahlen zwischen " + Decimal.MinValue + " und " + Decimal.MaxValue + " berechnet werden.");
+                return ZahlEinlesen();
+            }
+
+
         }
 
         private string OperatorEinlesen()
