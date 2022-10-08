@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Console_Calculator
 {
+    public enum BenutzerWunschMoeglichkeiten
+    {
+        Neu,
+        Weiter,
+        Ende
+    }
     internal class ConsoleView
     {
         private CalculatorModel calculatorModel;
@@ -17,18 +23,12 @@ namespace Console_Calculator
 
         }
 
-        public enum BenutzerWunschMoeglichkeiten
-        {
-            Neu,
-            Weiter,
-            Ende
-        }
         public bool EndeWunsch { get; private set; }
         public BenutzerWunschMoeglichkeiten BenutzerWunsch { get; private set; }
 
         public void ErgebnisAusgabe()
         {
-            // Ausgabe des Ergebnisses erfolgt nur, wenn nicht durch die Zahl 0 dividert werden sollte
+            // Ausgabe des Ergebnisses erfolgt nur, wenn nicht durch die Zahl 0 dividert wurde
             if(!((calculatorModel.Rechenoperator == "/" || calculatorModel.Rechenoperator == "%") && (calculatorModel.Wert2 == 0)))
             // String-Ausgabe der Berechnung und des Ergebnisses
             Console.WriteLine("Ergebnis: " + calculatorModel.Wert1 + " " + calculatorModel.Rechenoperator + " " + calculatorModel.Wert2 + " = {0}", calculatorModel.Ergebnis);
@@ -107,21 +107,21 @@ namespace Console_Calculator
 
         private void BenutzerWunschAuswerten(string benutzerWunsch)
         {
-            switch (benutzerWunsch)
+            switch (benutzerWunsch.ToUpper())
             {
-                case "Neu":
+                case "NEU":
                     BenutzerWunsch = BenutzerWunschMoeglichkeiten.Neu;
                     EndeWunsch = false;
                     Console.Write(Environment.NewLine);
                     break;
 
-                case "Weiter":
+                case "WEITER":
                     BenutzerWunsch = BenutzerWunschMoeglichkeiten.Weiter;
                     EndeWunsch = false;
                     Console.Write(Environment.NewLine);
                     break;
 
-                case "Ende":
+                case "ENDE":
                     BenutzerWunsch = BenutzerWunschMoeglichkeiten.Ende;
                     EndeWunsch = true;
                     Console.Write(Environment.NewLine);
